@@ -1,8 +1,10 @@
 package org.senai;
 
 import org.senai.dao.Conexao;
+import org.senai.dao.EstudanteDAO;
 import org.senai.dao.PessoaDAO;
 import org.senai.dao.ProfessorDAO;
+import org.senai.model.Estudante;
 import org.senai.model.Pessoa;
 import org.senai.model.Professor;
 
@@ -39,15 +41,15 @@ public class Main {
 
         //pessoas.forEach(System.out::println);
 
-        ProfessorDAO professorDAO = new ProfessorDAO();
-       //Professor professor = new Professor(
+        //ProfessorDAO professorDAO = new ProfessorDAO();
+        //Professor professor = new Professor(
         //       0,"Carlos Alberto2", "carlos2@universidade.com","Matemática"
-       //);
-       //professorDAO.inserir(professor);
-       //System.out.println("Professor inserido: " + professor);
-       //professorDAO.buscarPorId(5);
+        //);
+        //professorDAO.inserir(professor);
+        //System.out.println("Professor inserido: " + professor);
+        //professorDAO.buscarPorId(5);
 
-       //System.out.println(professorDAO.buscarPorId(5));
+        //System.out.println(professorDAO.buscarPorId(5));
 
         //List<Professor> professores = professorDAO.listarTodos();
         //Professor profe = professores.getFirst();
@@ -62,7 +64,29 @@ public class Main {
 //
         //professorDAO.atualizar(profe);
         //System.out.println(professorDAO.buscarPorId(5));
+        //professorDAO.deletar(5);
 
-        professorDAO.deletar(5);
+
+        //abaixo testes com a classe estudante e estudanteDAO
+        EstudanteDAO estudanteDAO = new EstudanteDAO();
+        //Estudante jose = new Estudante(8,"José Almeida atualizado", "josecorreto@senai.com.br", "2253389");
+        //estudanteDAO.inserir(jose);
+        //estudanteDAO.buscarPorId(jose.getId());
+        //estudanteDAO.atualizar(jose);
+
+        //listando os estudantes
+
+        List<Estudante> estudantes = estudanteDAO.listarTodos();
+        estudantes.forEach(System.out::println);
+
+
+        //para executar esse deletar de estudante também precisei executar o delete cascade no my sql
+        //como foi com o codigo do professor visto em aula
+        estudanteDAO.deletar(8);
+
+
+
+
+
     }
 }

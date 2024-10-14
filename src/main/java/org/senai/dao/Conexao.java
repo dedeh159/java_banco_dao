@@ -9,7 +9,7 @@ public class Conexao {
 
         final String URL = "jdbc:mysql://localhost:3306/primeira_api";
         final String USER = "root";
-        final String PASSWORD = "";
+        final String PASSWORD = "Hwbfaa65@";
 
         try {
         Connection conexao = DriverManager.getConnection(URL, USER, PASSWORD);
